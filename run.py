@@ -1,4 +1,3 @@
-%%writefile run.py
 import argparse, glob, io, json, os, sys, time
 import av
 import numpy as np
