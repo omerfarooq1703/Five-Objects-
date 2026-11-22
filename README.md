@@ -53,6 +53,9 @@ Optional: `--k` (frames sampled per second, default 4) and `--batch`
   the full-frame reference with F1 0.989 and exact people count 98.6%.
 - `run.py` uses one GPU. My results for all 50 files were made by running two
   copies of it in parallel (one per GPU) on Kaggle, on different files.
-- Results were produced with Python 3.13. I have not tested Python 3.11.
+- Results were produced on Kaggle with Python 3.13 and `av` 19.0.2. `requirements.txt` pins `av` 18.1.1, because
+  19.0.2 needs Python 3.12+. I installed it on Python 3.11 and re-ran 3 videos: 1081 of 1082 lines matched
+  `results.jsonl.gz` (one `people` value differed by 1).
+- `requirements.txt` pins the CUDA 12.6 build of PyTorch (via the extra index URL on its first line).
 - Rotation tags are handled only for the old-style `rotate` tag and are untested.
 - `results.jsonl.gz` holds the results for the first 50 files.
